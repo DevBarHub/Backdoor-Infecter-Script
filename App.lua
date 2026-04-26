@@ -65,7 +65,7 @@ local function ScanForBackdoor(code)
     return found
 end
 
-local Input = MainTab:CreateInput({
+local Script = MainTab:CreateInput({
    Name = "Executor",
    CurrentValue = "",
    PlaceholderText = "Put The Script (Copy and Paste is better in pc)",
@@ -73,5 +73,27 @@ local Input = MainTab:CreateInput({
    Flag = "Input1",
    Callback = function(Text)
         ScanForBackdoor(Text)
+   end,
+})
+
+local Clear = MainTab:CreateButton({
+   Name = "Button Example",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+         Script:Set("") -- The new input text value
+         Rayfield:Notify({
+               Title = "Success!!!",
+               Content = "Executor Cleared",
+               Duration = 6.5,
+               Image = "bug",
+            })
+   end,
+})
+
+local Button = Scripts:CreateButton({
+   Name = "Polaria",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+         ScanForBackdoor('require(14264471859345):Pload("'Player'")')
    end,
 })
