@@ -77,7 +77,7 @@ local Script = MainTab:CreateInput({
 })
 
 local Clear = MainTab:CreateButton({
-   Name = "Button Example",
+   Name = "Clear",
    Callback = function()
    -- The function that takes place when the button is pressed
          Script:Set("") -- The new input text value
